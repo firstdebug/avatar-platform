@@ -2,40 +2,94 @@
 
 讯飞虚拟人交互平台全流程接入助手 - 从零代码快速搭建到 SDK/WebAPI 深度集成。
 
+接入方式：
+claude code：
+
+
 ## 功能概览
 
 支持四种接入方式:
 
 ### 1. 创建标准应用(零代码)
+
 - **Web 对话模板**: 智能客服、H5 对话页、大屏交互
 - **数字人直播平台**: 虚拟主播带货、直播间互动
 
 ### 2. SDK 集成开发
+
 - **Web SDK**: 浏览器端、H5 页面、桌面应用
 - **Android SDK**: 原生 Android 应用
 - **iOS SDK**: 原生 iOS 应用
 
 ### 3. WebAPI 报文接入
+
 - 后端直连,无需 SDK
 - 支持 Python/Java/Node.js
 - 完整协议文档和 demo
 
 ### 4. 其他核心能力
+
 - 登录获取凭据、检查应用授权
 - 环境检查、配置调整
 - 错误码定位、网络诊断
 - 大模型配置、知识库管理
 
-## 快速开始
+## 快速开始（目前仅支持claude code，codex与cursor的正在适配中）
 
-当你问"你能做什么"或"有哪些功能"时,我会引导你:
-1. 订阅产品(标准产品或接口能力)
-2. 登录获取凭据
-3. 检查应用授权
-4. 选择接入方式
-5. 开始集成
+方式 1：从 GitHub 直接安装（推荐）
 
-详见 `docs/capabilities.md` 和 `docs/onboarding-flow.md`。
+```bash
+# 从 GitHub 仓库安装
+claude plugin add https://github.com/firstdebug/avatar-platform.git
+
+# 或使用简写
+claude plugin add firstdebug/avatar-platform
+```
+
+方式 2：本地开发模式
+
+```bash
+# 克隆仓库
+git clone https://github.com/firstdebug/avatar-platform.git
+cd avatar-platform
+
+# 链接到 Claude Code
+claude plugin link .
+```
+
+方式 3：添加为插件市场
+
+```bash
+# 添加市场源
+claude plugin marketplace add https://github.com/firstdebug/avatar-platform.git
+
+# 然后安装插件
+claude plugin install avatar-platform
+```
+
+✅ 验证安装
+
+```bash
+# 查看已安装插件
+claude plugin list
+
+# 应该看到 avatar-platform 出现在列表中
+```
+
+🚀 快速开始
+
+安装成功后，在 Claude Code 中使用：
+
+```
+/avatar-workflow-entry
+```
+
+或者直接告诉 Claude 你的需求：
+
+- "我想做一个智能客服"
+- "需要在 Android app 里集成虚拟人"
+- "后端 Python 怎么对接 WebAPI"
+- "你能做什么" / "有哪些功能"
 
 ## 目录结构
 
@@ -76,6 +130,7 @@ avatar-platform/
 ## Skills 列表(28 个)
 
 ### 接入准备与配置
+
 - `avatar-workflow-entry` - 任务路由和工作流入口
 - `avatar-credentials` - 登录平台、获取凭据、检查应用授权
 - `avatar-preflight` - 环境门禁(Node/npm/防火墙/依赖)
@@ -84,10 +139,12 @@ avatar-platform/
 - `toolchain` - 工具链检查(web/android/ios)
 
 ### 标准应用(零代码)
+
 - `avatar-web-template` - Web 对话模板创建
 - `avatar-live-streaming` - 数字人直播平台
 
 ### SDK 交互能力
+
 - `text-driver` - 文本驱动
 - `text-interact` - 文本交互(大模型对话)
 - `audio-driver` - 音频驱动
@@ -98,18 +155,22 @@ avatar-platform/
 - `transparent-bg` - 透明背景
 
 ### WebAPI 报文接入
+
 - `avatar-webapi-protocol` - WebAPI 协议和 demo
 
 ### 故障排查与调试
+
 - `avatar-troubleshoot` - 错误码定位、常见问题排查
 - `avatar-permissions-setup` - 浏览器权限配置(麦克风/摄像头)
 - `avatar-network-debug` - 网络诊断(WSS 连通性/DNS)
 
 ### 平台管理
+
 - `avatar-model-config` - 绑定/切换大模型(星火/GPT/Claude)
 - `avatar-knowledge-base` - 创建/上传/管理知识库
 
 ### 开发辅助
+
 - `avatar-brainstorming` - 需求澄清和方案设计
 - `avatar-planning` - 集成任务计划生成(三阶段工作流第二阶段)
 - `avatar-executing` - 执行器(调度其他 skills)
@@ -139,6 +200,7 @@ avatar-platform/
 ```
 
 或者直接告诉我你的需求,我会自动识别并路由:
+
 - "我想做一个智能客服"
 - "需要在 Android app 里集成虚拟人"
 - "后端 Python 怎么对接 WebAPI"
@@ -147,6 +209,7 @@ avatar-platform/
 ### 自动路由流程
 
 当你提出需求后,系统会自动:
+
 1. **识别意图**(通过 `avatar-workflow-entry` 智能路由)
 2. 引导订阅产品(如果还没订阅)
 3. 登录获取凭据(`avatar-credentials`)
@@ -159,7 +222,9 @@ avatar-platform/
    - 故障排查 → `avatar-troubleshoot`
 
 ### 作为开发者
+
 如果你要扩展或修改 skills:
+
 1. 阅读 `docs/authoring-guide.md` 了解 skill 编写规范
 2. 参考现有 skill 的 SKILL.md 和 references/
 3. 新增工具参考 `docs/tool-integration-guide.md`
@@ -168,6 +233,7 @@ avatar-platform/
 ## 依赖
 
 - **Python 3.8+**: 运行 tools/ 下的工具脚本。依赖见 `tools/requirements.txt`：
+  
   ```bash
   pip install -r tools/requirements.txt
   playwright install chromium
@@ -181,6 +247,7 @@ avatar-platform/
 ### 安装方式
 
 #### Claude Code
+
 ```bash
 # 方法1: 直接链接仓库根目录（推荐，开发模式）
 cd /path/to/avatar-platform
@@ -194,6 +261,7 @@ claude plugins list
 ```
 
 #### Cursor
+
 ```bash
 # 进入你的项目目录
 cd /path/to/your-project
@@ -212,6 +280,7 @@ ln -s /path/to/avatar-platform/cursor/agents agents
 ```
 
 #### Codex
+
 ```bash
 # 进入你的项目目录
 cd /path/to/your-project
@@ -244,7 +313,6 @@ acplugin -i . -o dist-convert
 rsync -av --delete dist-convert/cursor/ cursor/
 rsync -av --delete dist-convert/codex/ codex/
 ```
-
 
 ## 版本
 
