@@ -325,7 +325,7 @@ MIT License
 ## 联系方式
 
 - 讯飞虚拟人交互平台: https://virtual-man.xfyun.cn/
-- 技术文档: https://doc.xfyun.cn/avatar/
+- 技术文档: https://www.yuque.com/xnrpt/bbc1du/dkauxvpxydstyre8
 
 ---
 
