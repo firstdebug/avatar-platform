@@ -43,7 +43,7 @@ claude code：
 claude plugin marketplace add https://github.com/firstdebug/avatar-platform.git
 
 # 然后安装插件
-claude plugin install avatar-platform
+claude plugin install avatar-platform@avatar-platform-marketplace
 ```
 
 方式 2：本地开发模式
