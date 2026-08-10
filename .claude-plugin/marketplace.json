@@ -15,7 +15,7 @@
         "email": "shfan4@iflytek.com"
       },
       "category": "development",
-      "source": ".",
+      "source": "./claude/avatar-platform",
       "homepage": "https://virtual-man.xfyun.cn/",
       "keywords": [
         "xfyun",

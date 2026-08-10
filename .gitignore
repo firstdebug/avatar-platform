@@ -4,6 +4,10 @@ app_creds.json
 *cookies*.json
 *.enc
 .xfyun/
+.runtime/
+.env
+.env.*
+!.env.example
 
 # --- Python 缓存 ---
 __pycache__/

@@ -1,0 +1,20 @@
+{
+  "name": "avatar-platform-codex",
+  "interface": {
+    "displayName": "Avatar Platform Codex"
+  },
+  "plugins": [
+    {
+      "name": "avatar-platform",
+      "source": {
+        "source": "local",
+        "path": "./plugins/avatar-platform"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
