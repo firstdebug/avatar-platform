@@ -36,14 +36,14 @@ claude code：
 
 ## 快速开始（目前仅支持claude code，codex与cursor的正在适配中）
 
-方式 1：从 GitHub 直接安装（推荐）
+方式 1：从 GitHub 插件市场 直接安装（推荐）
 
 ```bash
-# 从 GitHub 仓库安装
-claude plugin add https://github.com/firstdebug/avatar-platform.git
+# 添加市场源
+claude plugin marketplace add https://github.com/firstdebug/avatar-platform.git
 
-# 或使用简写
-claude plugin add firstdebug/avatar-platform
+# 然后安装插件
+claude plugin install avatar-platform
 ```
 
 方式 2：本地开发模式
@@ -57,15 +57,6 @@ cd avatar-platform
 claude plugin link .
 ```
 
-方式 3：添加为插件市场
-
-```bash
-# 添加市场源
-claude plugin marketplace add https://github.com/firstdebug/avatar-platform.git
-
-# 然后安装插件
-claude plugin install avatar-platform
-```
 
 ✅ 验证安装
 
