@@ -230,12 +230,12 @@ protected void onDestroy() {
 根据步骤内容，读取对应的功能 skill：
 
 ```yaml
-文本驱动: skills/text-driver/
-文本交互: skills/text-interact/
-语音交互: skills/voice-interact/
-透明背景: skills/transparent-bg/
-权限配置: skills/permissions-setup/
-网络问题: skills/network-debug/
+文本驱动: skills/avatar-text-driver/
+文本交互: skills/avatar-text-interact/
+语音交互: skills/avatar-voice-interact/
+透明背景: skills/avatar-transparent-bg/
+权限配置: skills/avatar-permissions-setup/
+网络问题: skills/avatar-network-debug/
 ```
 
 ### Step 4: 生成代码

@@ -22,6 +22,6 @@
     "asr",
     "tts"
   ],
-  "skills": "./skills/",
-  "agents": "./agents/"
+  "skills": "./cursor/skills/",
+  "agents": "./cursor/agents/"
 }
